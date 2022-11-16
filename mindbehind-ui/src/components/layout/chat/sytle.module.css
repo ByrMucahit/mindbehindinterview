@@ -1,0 +1,5 @@
+
+.chatContainer {
+    position: absolute;
+    z-index: 10;
+}
