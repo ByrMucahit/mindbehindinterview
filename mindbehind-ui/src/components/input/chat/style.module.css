@@ -1,0 +1,26 @@
+
+.inputContainer {
+    .inputField {
+        display: flex;
+        border: 1px solid gray;
+        .inputComponent {
+            outline: none;
+            border: none;
+        }
+
+        svg {
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    .iconContainer {
+        margin-top: 3px;
+        padding-top: 3px;
+        max-width: 100px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+

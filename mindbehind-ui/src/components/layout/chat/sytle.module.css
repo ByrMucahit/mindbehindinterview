@@ -2,4 +2,7 @@
 .chatContainer {
     position: absolute;
     z-index: 10;
+    border: 1px solid gray;
+    border-radius: 5px 5px 0 0;
+    min-height: 300px;
 }
