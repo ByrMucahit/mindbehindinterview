@@ -1,6 +1,6 @@
 import ChatButton from "../../button/ChatButton";
 import {Row, Col} from "antd";
-import ChatLayout from "../chat";
+import ChatLayout from "../../../container/chat";
 const Layout = () => {
     return (<div>
         <Col>

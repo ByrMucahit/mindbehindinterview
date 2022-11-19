@@ -11,7 +11,8 @@
   "devDependencies": {
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
-    "postcss-nested": "^4.2.3"
+    "postcss-nested": "^4.2.3",
+    "react-time-format": "0.0.5"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
@@ -19,6 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "antd": "^4.24.2",
+    "axios": "^1.1.3",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "next": "13.0.3",

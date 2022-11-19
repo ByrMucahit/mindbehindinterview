@@ -34,5 +34,9 @@
         width: 1rem;
         margin-bottom: 3px;
 
+        svg:hover {
+            color: white;
+        }
+
     }
 }

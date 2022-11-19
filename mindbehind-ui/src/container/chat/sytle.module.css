@@ -1,10 +1,13 @@
 
 .chatContainer {
-    position: absolute;
+
+    position: static;
+    right: 0;
     z-index: 10;
     border:   var(--c-border) solid;
     border-radius: 5px ;
     min-height: 300px;
+
 
     .chatLayout {
         overflow: hidden;

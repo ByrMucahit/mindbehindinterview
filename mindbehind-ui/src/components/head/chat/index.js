@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import {CloseOutlined, CaretDownOutlined} from '@ant-design/icons'
+import {CloseOutlined, CaretDownOutlined } from '@ant-design/icons'
 
 const ChatHeader = () => {
     return (<div className={styles.chatHeaderContainer}>
@@ -7,6 +7,7 @@ const ChatHeader = () => {
         <div className={styles.iconContainer}>
             <div><CaretDownOutlined/></div>
             <div><CloseOutlined/></div>
+
         </div>
     </div>)
 }
