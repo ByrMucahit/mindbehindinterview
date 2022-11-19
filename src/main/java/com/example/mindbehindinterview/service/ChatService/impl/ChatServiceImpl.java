@@ -7,6 +7,7 @@ import com.example.mindbehindinterview.repository.ChatRepository;
 import com.example.mindbehindinterview.service.ChatService.ChatService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.usertype.UserType;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,5 +50,10 @@ public class ChatServiceImpl implements ChatService {
         chatRepository.save(this.prepareUserChat(sendMessageRequest.getMessage()));
         chatRepository.save(this.prepareBotChat(sendMessageRequest.getMessage()));
 
+    }
+
+    @Override
+    public List<Chat> readRecentMessages() {
+        return chatRepository.findTop5BySenderOrderByCreatedAtDesc(SenderType.USER);
     }
 }

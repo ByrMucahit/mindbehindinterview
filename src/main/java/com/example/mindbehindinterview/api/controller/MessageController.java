@@ -2,11 +2,14 @@ package com.example.mindbehindinterview.api.controller;
 
 import com.example.mindbehindinterview.api.request.SendMessageRequest;
 import com.example.mindbehindinterview.api.resource.ChatResource;
+import com.example.mindbehindinterview.api.resource.RecentMessagesResource;
 import com.example.mindbehindinterview.domain.Chat;
 import com.example.mindbehindinterview.service.ChatService.ChatService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +31,14 @@ public class MessageController {
         return chat.toDTO(chatService.readMessages());
     }
 
-    @PostMapping("/save")
-    private void saveMessage(@RequestBody SendMessageRequest sendMessageRequest) {
+    @GetMapping("/recent-messages")
+    private List<RecentMessagesResource> getRecentMessages() {
+        Chat chat = new Chat();
+        return chat.toDto(chatService.readRecentMessages());
+    }
+
+    @PostMapping(value = "/save", consumes = MediaType.ALL_VALUE, produces = {MediaType.ALL_VALUE, "application/json"})
+    private void saveMessage(@ModelAttribute SendMessageRequest sendMessageRequest) {
         log.debug("The Transaction to save message has been just started ...");
         chatService.saveMessage(sendMessageRequest);
     }
