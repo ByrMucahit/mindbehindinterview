@@ -2,7 +2,7 @@
 
 # How to run project ? 
 
-I assume that you're here in root directory of the project.
+I assume that you're in root directory of the project.
 
 ## Front-End
 
