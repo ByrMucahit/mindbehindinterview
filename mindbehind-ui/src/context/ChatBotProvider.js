@@ -43,10 +43,7 @@ const ChatProvider = (props) => {
                 getMessages();
             }
         })
-
-
     }
-
 
     function getMessages() {
         const ins = axios.create({

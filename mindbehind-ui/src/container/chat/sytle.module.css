@@ -7,6 +7,7 @@
     border:   var(--c-border) solid;
     border-radius: 5px ;
     min-height: 300px;
+    display: none;
 
 
     .chatLayout {

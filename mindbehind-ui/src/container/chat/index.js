@@ -6,40 +6,40 @@ import {Row, Col, Space, Table, Tag} from 'antd'
 import {useContext, useEffect, useState} from "react";
 import axios from 'axios';
 import Time from 'react-time-format'
-import GetLastUsedWords from '../chatBot';
 import {ChatContext} from "../../context/ChatBotProvider";
+import HeaderContainer from "../../container/chatheader/index";
 
 const data = [
     {
         key: '1',
-        messages: 'I want to see the product',
+        messages: 'I would like to say Hello',
         ellipsis: {
             showTitle: false,
         },
     },
     {
         key: '2',
-        messages: "I bought something, but I haven't achieved yet.",
+        messages: "I would like to say Bye !",
         ellipsis: {
             showTitle: false,
         },
     },
     {
         key: '3',
-        messages: "You have product limitly.",
+        messages: "I would like to say how are you?",
         ellipsis: {
             showTitle: false,
         },
     },
     {
         key: '4',
-        messages: "You have product limitly.",
+        messages: "I would like to say I'm happy",
         ellipsis: {
             showTitle: false,
         },
     },{
         key: '3',
-        messages: "You have product limitly.",
+        messages: "I would like to say I need help",
         ellipsis: {
             showTitle: false,
         },
@@ -146,10 +146,8 @@ const StaticChatBox = () => {
                                     textAlign: 'start'
                                 }}
                             >
-                                Merhaba, LC Waikiki’ye hoş geldiniz. 😊 Dijital asistanınız olarak, size ben yardımcı
-                                olacağım. Kişisel verilerinizin korunması kapsamında KVKK aydınlatma metnimizi linke
-                                tıklayarak okuyabilirsiniz.
-                                https://www.lcwaikiki.com/tr-TR/TR/statik/AydinlatmaMetniEticaret
+                                Hey You, I'm echobot. I'm a chatbot. I repeat something you said.
+                                Would you like to try it ?
                             </div>
                         </div>
                     </Col>
@@ -172,8 +170,8 @@ const StaticChatBox = () => {
                         }}>
                             {console.log('lastUsedContent: ', lastUsedContent.length)}
 
-                            <Table columns={columns} dataSource={lastUsedContent.length === 0 ? data: lastUsedContent}
-                                   pagination={false}/>
+                            { lastUsedContent.length !== 0 ? <Table columns={columns} dataSource={lastUsedContent}
+                                                                   pagination={false}/> : null }
                         </Row>
                     </div>
 
@@ -191,27 +189,28 @@ const ChatBox = ({date, from, message}) => {
             width: '100%',
             display: 'flex',
             alignItems: 'flex-end',
-            justifyContent: from === 'BOT' ? 'flex-end' : 'flex-start',
+            justifyContent: from === 'BOT' ? 'flex-start' : 'flex-end',
             fontSize: '12px',
             fontWeight: 'bold',
         }}>
             {from === 'BOT' ? (
 
                 <div style={{
-                    marginRight: 10,
+                    marginRight: 3,
                     marginBottom: 20,
                     alignItems: 'left',
                     overflow: 'hidden',
+
                     paddingLeft: 3,
                 }}>
                     <Row style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        maxWidth: '300px',
+                        maxWidth: '250px',
                         minWidth: '50px',
                         border: "var(--c-border) solid 1px",
                         borderRadius: 3,
-                        background: "var(--c-receiver-chat-cloud-background)",
+                        background: "var(--c-sender-chat-cloud-background)",
 
                     }}>
                         <Col style={{margin: 5}}>
@@ -221,7 +220,7 @@ const ChatBox = ({date, from, message}) => {
                                     flexDirection: 'column',
                                     alignItems: (from = 'flex-start'),
                                     width: 'max-content',
-                                    maxWidth: 300,
+                                    maxWidth: 200,
                                     justifyContent: "center",
                                     textAlign: 'center'
                                 }}
@@ -264,7 +263,7 @@ const ChatBox = ({date, from, message}) => {
                         minWidth: 50,
                         border: "var(--c-border) solid 1px",
                         borderRadius: 3,
-                        background: "var(--c-sender-chat-cloud-background)",
+                        background: "var(--c-receiver-chat-cloud-background)",
 
                     }}>
                         <Col style={{margin: 5}}>
@@ -313,9 +312,9 @@ const ChatLayout = () => {
     const {content} = useContext(ChatContext);
 
     return (
-        <div className={styles.chatContainer}>
+        <div className={styles.chatContainer} id={'chatContainer'}>
             <div>
-                <ChatHeader/>
+                <HeaderContainer/>
             </div>
 
             <div className={styles.chatLayout} style={{overflowY: 'scroll', maxHeight: 400, minWidth: 350}}>
@@ -331,7 +330,7 @@ const ChatLayout = () => {
                     })}
             </div>
             <div>
-                <ChatInput/>
+                <ChatInput />
             </div>
 
         </div>

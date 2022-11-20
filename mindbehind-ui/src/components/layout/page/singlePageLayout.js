@@ -1,6 +1,7 @@
-import ChatButton from "../../button/ChatButton";
+
 import {Row, Col} from "antd";
 import ChatLayout from "../../../container/chat";
+import ButtonContainer from "../../../container/chatbutton/index"
 const Layout = () => {
     return (<div>
         <Col>
@@ -8,7 +9,7 @@ const Layout = () => {
                 <ChatLayout/>
             </Row>
             <Row>
-                <ChatButton/>
+                <ButtonContainer />
             </Row>
 
         </Col>
