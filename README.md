@@ -1,6 +1,6 @@
 # mindbehindinterview
 
-#How to run project ? 
+# How to run project ? 
 
 I assume that you're here in root directory of the project.
 
