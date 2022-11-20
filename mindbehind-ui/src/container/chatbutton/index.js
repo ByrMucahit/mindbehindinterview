@@ -10,7 +10,8 @@ const ButtonContainer = () => {
 
     }
 
-    return <ChatButton style={{background: 'var(--c-button-background)', fontWeight: 'bold'}} id={'echo'} name={'EchoBot'} inpStyle={<AndroidOutlined/>} onClickAttribute={() => findClick()}/>
+    return <ChatButton style={{background: 'var(--c-button-background)', fontWeight: 'bold'}} id={'echo'}
+                       name={'EchoBot'} inpStyle={<AndroidOutlined/>} onClickAttribute={() => findClick()}/>
 }
 
 export default ButtonContainer;

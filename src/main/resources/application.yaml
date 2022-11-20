@@ -1,10 +1,10 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: ${MYSQL_URL}
-    username: ${MYSQL_USERNAME}
-    password: ${MYSQL_PASSWORD}
+    url: jdbc:mysql://mindbehind:3306/mindbehinddb
+    username: root
+    password: mindbehindpassword
   jpa:
     hibernate:
       ddl-auto: update
-      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect

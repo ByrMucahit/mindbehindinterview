@@ -8,24 +8,31 @@ export const ChatContext = createContext("unknown");
 const ChatProvider = (props) => {
     const [content, setContent] = useState([]);
     const [lastUsedContent, setLastUsedContent] = useState([]);
+    const [regularRequestFlag, setRegularRequestFlag ] = useState(false);
 
     useEffect(()=> {
-        getMessages();
 
-        const ins = axios.create({
-            baseURL: 'http://localhost:8080',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                'access-Control-Allow-Origin': "*"
-            },
-        });
+        if(regularRequestFlag === false) {
+            getMessages();
 
-        ins.get('/api/chat/recent-messages').then((response) => {
-            console.log("Response: ", response);
-            setLastUsedContent(response.data);
-        });
-    }, []);
+            const ins = axios.create({
+                baseURL: 'http://localhost:8080',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    'access-Control-Allow-Origin': "*"
+                },
+            });
+
+            ins.get('/api/chat/recent-messages').then((response) => {
+                console.log("Response: ", response);
+                setLastUsedContent(response.data);
+            });
+        }
+
+        setRegularRequestFlag(true);
+
+    }, [regularRequestFlag]);
 
     const sendMessage = (value) => {
         console.log('send message value: ', value);

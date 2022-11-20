@@ -1,10 +1,7 @@
-import ChatHeader from "../../components/head/chat";
-
 import styles from './sytle.module.css'
 import ChatInput from "../../components/input/chat";
 import {Row, Col, Space, Table, Tag} from 'antd'
-import {useContext, useEffect, useState} from "react";
-import axios from 'axios';
+import {useContext} from "react";
 import Time from 'react-time-format'
 import {ChatContext} from "../../context/ChatBotProvider";
 import HeaderContainer from "../../container/chatheader/index";
@@ -37,7 +34,7 @@ const data = [
         ellipsis: {
             showTitle: false,
         },
-    },{
+    }, {
         key: '3',
         messages: "I would like to say I need help",
         ellipsis: {
@@ -170,8 +167,8 @@ const StaticChatBox = () => {
                         }}>
                             {console.log('lastUsedContent: ', lastUsedContent.length)}
 
-                            { lastUsedContent.length !== 0 ? <Table columns={columns} dataSource={lastUsedContent}
-                                                                   pagination={false}/> : null }
+                            {lastUsedContent.length !== 0 ? <Table columns={columns} dataSource={lastUsedContent}
+                                                                   pagination={false}/> : null}
                         </Row>
                     </div>
 
@@ -330,7 +327,7 @@ const ChatLayout = () => {
                     })}
             </div>
             <div>
-                <ChatInput />
+                <ChatInput/>
             </div>
 
         </div>
