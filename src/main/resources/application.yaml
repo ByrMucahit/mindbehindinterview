@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mindbehind:3306/mindbehinddb
-    username: root
-    password: mindbehindpassword
+    url:
+    username:
+    password:
   jpa:
     hibernate:
       ddl-auto: update
