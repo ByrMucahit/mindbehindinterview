@@ -10,13 +10,15 @@ const ChatProvider = (props) => {
     const [lastUsedContent, setLastUsedContent] = useState([]);
     const [regularRequestFlag, setRegularRequestFlag ] = useState(false);
 
+    const BASE_URL = "<<name of the database container>>";
+
     useEffect(()=> {
 
         if(regularRequestFlag === false) {
             getMessages();
 
             const ins = axios.create({
-                baseURL: 'http://localhost:8080',
+                baseURL: BASE_URL,
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -43,7 +45,7 @@ const ChatProvider = (props) => {
 
     const PostRequest = (data) => {
         console.log('formdata: ', data);
-        axios.post("http://localhost:8080/api/chat/save", data, {headers: {Accept: "application/json"}}).then(function (response) {
+        axios.post(`${BASE_URL}/api/chat/save`, data, {headers: {Accept: "application/json"}}).then(function (response) {
             console.log("response", response);
             if(response.status === 200 || response.status === 201) {
                 getMessages();
@@ -53,7 +55,7 @@ const ChatProvider = (props) => {
 
     function getMessages() {
         const ins = axios.create({
-            baseURL: 'http://localhost:8080',
+            baseURL: BASE_URL,
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
