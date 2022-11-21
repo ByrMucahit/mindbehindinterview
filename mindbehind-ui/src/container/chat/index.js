@@ -312,7 +312,7 @@ const ChatLayout = () => {
                 <HeaderContainer/>
             </div>
 
-            <div className={styles.chatLayout} style={{overflowY: 'scroll', maxHeight: 400, minWidth: 350}}>
+            <div className={styles.chatLayout} style={{overflowY: 'scroll', minWidth: 350}}>
                 <div>
                     <StaticChatBox/>
                 </div>

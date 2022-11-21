@@ -12,7 +12,8 @@
 
     .chatLayout {
         overflow: hidden;
-        min-height: 378px;
+        min-height: 200px;
+        max-height: 380px;
     }
 
     .chatInput {
