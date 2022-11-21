@@ -1,5 +1,5 @@
 # mindbehindinterview
-
+Tech Pack: Java Boot Spring, React Next.js, Docker, Github, PostCSS.
 # How to run project ? 
 
 I assume that you're in root directory of the project.
@@ -40,3 +40,5 @@ Note: The name of the project I used is "mindbehindapp",that's why the command i
 `docker run --network <<name of the network>> --name <<name of the container>> -p 8080:8080 -d <<name of the app>>`
 
 Warning: The name of the network that exist into command to run container on only one network have to be the same with the name of the network you have just build before.
+
+
