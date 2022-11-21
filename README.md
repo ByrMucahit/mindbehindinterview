@@ -1,5 +1,5 @@
 # mindbehindinterview
-Tech Pack: Java Boot Spring, React Next.js, Docker, Github, PostCSS.
+Tech Pack: Java Boot Spring, React Next.js, MySQL,Docker, Github, PostCSS.
 # How to run project ? 
 
 I assume that you're in root directory of the project.
