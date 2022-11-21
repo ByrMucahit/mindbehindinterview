@@ -25,7 +25,6 @@ const ChatProvider = (props) => {
             });
 
             ins.get('/api/chat/recent-messages').then((response) => {
-                console.log("Response: ", response);
                 setLastUsedContent(response.data);
             });
         }
@@ -66,9 +65,8 @@ const ChatProvider = (props) => {
             setContent(response.data);
         });
     }
-    const start = "Hello World";
     return (
-        <ChatContext.Provider value={{start, content, getMessages, sendMessage, lastUsedContent}}>
+        <ChatContext.Provider value={{content, getMessages, sendMessage, lastUsedContent}}>
             {props.children}
         </ChatContext.Provider>
     )

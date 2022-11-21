@@ -165,8 +165,6 @@ const StaticChatBox = () => {
                             background: "var(--c-sender-chat-cloud-background)",
 
                         }}>
-                            {console.log('lastUsedContent: ', lastUsedContent.length)}
-
                             {lastUsedContent.length !== 0 ? <Table columns={columns} dataSource={lastUsedContent}
                                                                    pagination={false}/> : null}
                         </Row>
