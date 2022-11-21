@@ -6,11 +6,17 @@
     z-index: 10;
     border:   var(--c-border) solid;
     border-radius: 5px ;
-    min-height: 300px;
+    min-height: 500px;
     display: none;
 
 
     .chatLayout {
         overflow: hidden;
+        min-height: 378px;
+    }
+
+    .chatInput {
+        position: absolute;
+        bottom: 0;
     }
 }

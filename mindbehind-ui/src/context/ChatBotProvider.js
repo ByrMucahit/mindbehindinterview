@@ -10,7 +10,7 @@ const ChatProvider = (props) => {
     const [lastUsedContent, setLastUsedContent] = useState([]);
     const [regularRequestFlag, setRegularRequestFlag ] = useState(false);
 
-    const BASE_URL = "<<name of the database container>>";
+    const BASE_URL = "http://localhost:8080";
 
     useEffect(()=> {
 

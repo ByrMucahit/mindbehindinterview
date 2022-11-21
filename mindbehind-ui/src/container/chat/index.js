@@ -151,7 +151,7 @@ const StaticChatBox = () => {
 
                     <Col style={{marginLeft: 10, fontSize: 12, marginTop: 3, width: '20%'}}>
                         <Col>
-                            <div style={{position: 'static', bottom: 0}}>08.20</div>
+                            <div style={{position: 'static', bottom: 0}}><Time value={new Date().getTime()} format="hh.mm"/></div>
                         </Col>
                     </Col>
                 </Row>
@@ -324,10 +324,7 @@ const ChatLayout = () => {
                         )
                     })}
             </div>
-            <div>
-                <ChatInput/>
-            </div>
-
+                <ChatInput className={styles.chatInput}/>
         </div>
 
     )

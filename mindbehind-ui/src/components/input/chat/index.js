@@ -4,6 +4,7 @@ import styles from './style.module.css'
 import {useState, useContext} from "react";
 import axios from "axios";
 import {ChatContext} from "../../../context/ChatBotProvider";
+import cn from 'classnames'
 
 const PostRequest = (data) => {
     console.log('formdata: ', data);
@@ -12,13 +13,13 @@ const PostRequest = (data) => {
     })
 }
 
-const ChatInput = () => {
+const ChatInput = ({className}) => {
 
     const {sendMessage} = useContext(ChatContext);
     const [value, setValue] = useState("");
 
     return (
-        <div className={styles.inputContainer}>
+        <div className={cn([styles.inputContainer, className])}>
             <div className={styles.inputField}>
                 <Input placeholder="Please text your message" className={styles.inputComponent}
                        id={'chat'}
