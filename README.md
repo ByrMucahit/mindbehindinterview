@@ -14,6 +14,8 @@ then, it will have been enough to write the following command.
 
 `npm run dev`
 
+Warning: you don't forget that you have to write the url in context to send request to true url address. The url can be name of the database container like 'http://mindbehinddb-container:8080' 
+
 
 ## Backend
 
