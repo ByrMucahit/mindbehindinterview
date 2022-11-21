@@ -37,6 +37,6 @@ Note: The name of the project I used is "mindbehindapp",that's why the command i
  Warning: We look out that the name of the network have to be the same with the name of the network you have just built above.
  
 6. We have just built database container.The next step is to create app container and database on only one network. We can that by writing on followin command :
-`docker run --network <<name of the network>> --name <<name of the container>> -p 8080:8080 -d mindbehindapp`
+`docker run --network <<name of the network>> --name <<name of the container>> -p 8080:8080 -d <<name of the app>>`
 
 Warning: The name of the network that exist into command to run container on only one network have to be the same with the name of the network you have just build before.
