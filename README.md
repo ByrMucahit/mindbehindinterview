@@ -18,18 +18,18 @@ then, it will have been enough to write the following command.
 ## Backend
 
 The backend project is located in the root directory.
-1. Firstly , We need to build the gradle project by writing the following command on the terminal.
+1. Firstly , We needed to build the gradle project by writing the following command on the terminal.
 `./gradlew build -x test`
 
-2. then, we need to build the docker image, using the following command:
+2. then, we needed to build the docker image, using the following command:
 `docker build -t <<name>> . `
 Note: The name of the project I used is "mindbehindapp",that's why the command is `docker build -t mindbehindapp .`.  
 
-3. We will use the mysql image, that's why I need to install by entering the following command:
+3. We used the mysql image, that's why I needed to install by entering the following command:
 `docker pull mysql:5.7` 
 
-4. We need to create the docker network, because we will use two different containers. We have to create the network for containers can communicate together . We can create network by writing following command: `docker network create <<name>>`
-5. then, we need to two different containers,because we have the database and the app. One of the container was used for the database, another was used for app.
+4. We needed to create the docker network, because we used two different containers. We have to create the network for containers can communicate together . We can create network by writing following command: `docker network create <<name>>`
+5. then, we needed to two different containers,because we have the database and the app. One of the container was used for the database, another was used for app.
  5.1 We can write the following command to the database container.
  `docker run --name=<<name>> --network=<<name of network>> -d -p 3306:3306 -v <<URL PATH>> -e MYSQL_ROOT_PASSWORD=<<password>> -e MYSQL_DATABASE=<<database name>>
 	mysql:<<version>> (5.7)`
