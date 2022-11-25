@@ -2,7 +2,8 @@ package com.example.mindbehindinterview.domain;
 
 import com.example.mindbehindinterview.api.resource.ChatResource;
 import com.example.mindbehindinterview.api.resource.RecentMessagesResource;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -19,8 +20,10 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@Data
+
 @Entity
+@Getter
+@Setter
 public class Chat {
 
     @Id
@@ -40,15 +43,15 @@ public class Chat {
     public List<ChatResource> toDTO(List<Chat> chatList) {
 
         return chatList.stream().map(chat -> ChatResource
-                .builder()
-                .senderType(chat.sender)
-                .message(chat.getMessage())
-                .date(chat.getCreatedAt())
-                .build())
+                        .builder()
+                        .senderType(chat.sender)
+                        .message(chat.getMessage())
+                        .date(chat.getCreatedAt())
+                        .build())
                 .collect(Collectors.toList());
     }
 
-    public List<RecentMessagesResource> toDto(List<Chat> chatList) {
+    public List<RecentMessagesResource> builder(List<Chat> chatList) {
         return chatList.stream().map(item -> RecentMessagesResource
                 .builder()
                 .messages(item.message)

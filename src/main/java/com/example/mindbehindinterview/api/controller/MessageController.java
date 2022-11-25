@@ -33,7 +33,7 @@ public class MessageController {
     @GetMapping("/recent-messages")
     public List<RecentMessagesResource> getRecentMessages() {
         Chat chat = new Chat();
-        return chat.toDto(chatService.readRecentMessages());
+        return chat.builder(chatService.readRecentMessages());
     }
 
     @PostMapping(value = "/save", consumes = MediaType.ALL_VALUE, produces = {MediaType.ALL_VALUE, "application/json"})
