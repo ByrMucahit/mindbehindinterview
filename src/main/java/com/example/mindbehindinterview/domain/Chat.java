@@ -39,11 +39,21 @@ public class Chat {
 
     public List<ChatResource> toDTO(List<Chat> chatList) {
 
-        return chatList.stream().map(chat -> ChatResource.builder().senderType(chat.sender).message(chat.getMessage()).date(chat.getCreatedAt()).build()).collect(Collectors.toList());
+        return chatList.stream().map(chat -> ChatResource
+                .builder()
+                .senderType(chat.sender)
+                .message(chat.getMessage())
+                .date(chat.getCreatedAt())
+                .build())
+                .collect(Collectors.toList());
     }
 
     public List<RecentMessagesResource> toDto(List<Chat> chatList) {
-        return chatList.stream().map(item -> RecentMessagesResource.builder().messages(item.message).key(UUID.randomUUID().toString()).build()).collect(Collectors.toList());
+        return chatList.stream().map(item -> RecentMessagesResource
+                .builder()
+                .messages(item.message)
+                .key(UUID.randomUUID().toString())
+                .build()).collect(Collectors.toList());
     }
 
 }
