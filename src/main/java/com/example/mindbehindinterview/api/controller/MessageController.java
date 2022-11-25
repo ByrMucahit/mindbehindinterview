@@ -25,19 +25,19 @@ public class MessageController {
     private final ChatService chatService;
 
     @GetMapping
-    private List<ChatResource> getMessages() {
+    public List<ChatResource> getMessages() {
         Chat chat = new Chat();
         return chat.toDTO(chatService.readMessages());
     }
 
     @GetMapping("/recent-messages")
-    private List<RecentMessagesResource> getRecentMessages() {
+    public List<RecentMessagesResource> getRecentMessages() {
         Chat chat = new Chat();
         return chat.toDto(chatService.readRecentMessages());
     }
 
     @PostMapping(value = "/save", consumes = MediaType.ALL_VALUE, produces = {MediaType.ALL_VALUE, "application/json"})
-    private void saveMessage(@ModelAttribute SendMessageRequest sendMessageRequest) {
+    public void saveMessage(@ModelAttribute SendMessageRequest sendMessageRequest) {
         log.debug("The Transaction to save message has been just started ...");
         chatService.saveMessage(sendMessageRequest);
     }
